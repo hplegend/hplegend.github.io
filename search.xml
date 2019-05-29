@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ChainedTransactionManager</title>
+      <link href="/2019/05/29/ChainedTransactionManager/"/>
+      <url>/2019/05/29/ChainedTransactionManager/</url>
+      
+        <content type="html"><![CDATA[<p>####背景</p><p>随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异常而影响核心业务。既然db分部在不同的数据库，而我们在某些业务需求中是 会存在同时更新多数据库上的表的需求的（主要是系统后期，不断的拆分业务、分库分表等等）。</p><p>####传统spring事务存在的问题</p><p>传统的Spring事务@Transicational仅支持单数据源，也就是说如果在有@Transicational注解的方法内，继续调用其他的方法，且其他方法需要切换数据源，那么很遗憾，这样做行不通。肯定会报“XXX relation not exsist”的异常，因为切换数据源无效，会在当前数据源执行sql，那么肯定就会出现找不到表的情况了。</p><p>那么为什么@Transicational注解不支持数据源切换呢？</p><p>####不加事务@Transication是在什么时候获取db链接的</p><p>在获取db链接前，需要获取当前的数据源。对于配置了动态数据源切换的，是在DynamicDataSource.determineCurrentLookupKey里面。其核心是：org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource#determineTargetDataSource。</p><p>获取connection是从Transication中，默认也就是SpringManagedTransaction。SpringManagedTransaction的创建：</p><p>org.mybatis.spring.SqlSessionUtils#getSqlSession(org.apache.ibatis.session.SqlSessionFactory, org.apache.ibatis.session.ExecutorType, org.springframework.dao.support.PersistenceExceptionTranslator)。默认情况，dataSource是多数据源的AbstractDataSource，因此无法确定具体有哪个源。</p><p>####加事务@Transication是在什么时候获取db链接的</p><p>加了@Transication注解，开启事务事务在@Transication拦截器，因此，在开启事务的时候就获取了dataSource和connection，这个时候还没有执行数据源切换注解。因此，在后面执行了切换注解后，但是却不从里面拿connection，因此导致的切换无效。</p><p>下面的截图是开启事务时，mybatis执行的栈，可以看到connection没有替换为新的，也就是说开启事务后，切换数据的注解失效了。为啥呢？ 不用事务注解，是在执行的时候取拿链接；使用了注解，在事务拦截器中开启事务的时候拿链接。</p><p>猜测： 在mybatis执行的时候，如果没有连接，就取拿链接，如果有链接，就沿用老的链接。</p><p>通过debug代码，我们发现一个很重要的函数：org.mybatis.spring.transaction.SpringManagedTransaction#openConnection，db connection从这个函数中获取，而这里又是从dataSource获取，因此归根在于切换数据源没有替换到dataSource。未加注解，注入的是DynamicDataSource，因此在拿链接的时候，会调用DynamicDataSource重写的方法，进而拿到动态数据源切换的修改的数据源。 加上注解，在开启事务的时候也会从DynamicDataSource拿链接，但是此时的数据源切换还未生效。为什么会这样呢？查看一下org.springframework.jdbc.datasource.DataSourceTransactionManager#doBegin， 开启事务的时候，把connection写入了到了ConnectList中，在mybati中openConnection再次根据source获取connection的时候直接从list中获取，而不是从dataSource中再次获取一个connection，这个connection list是存在在ThreadLocal里面的。</p><pre><code>ConnectionHolder conHolder = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);if (conHolder != null &amp;&amp; (conHolder.hasConnection() || conHolder.isSynchronizedWithTransaction())) {</code></pre><p>究其原因，还是在于开启事务的时候，把dataSource放进了threadLocal里面，在拿去connection的时候会判断事务类型，如果之前开启了事务，就会从threadLocal里面取source。。。 。查看事务开启的代码TranscationalInterceptor，下面这段代码就是绑定绑定connection和datasource的代码，根据datasource取出来的connection列表入股有connection，那么就不会再去拿connection，这样就导致了后面通过注解切换数据库修改的datasource无效。</p><pre><code>if (txObject.isNewConnectionHolder()) {   TransactionSynchronizationManager.bindResource(getDataSource(), txObject.getConnectionHolder());}</code></pre><p>####ChainedTransactionManager</p><p>pom依赖配置：</p><pre><code> &lt;dependency&gt;               &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;               &lt;artifactId&gt;spring-data-commons&lt;/artifactId&gt;               &lt;spring.data.commons&gt;1.13.6.RELEASE&lt;/spring.data.commons&gt;&lt;/dependency&gt;</code></pre><p>事务配置：</p><pre><code>&lt;bean id=&quot;oneTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceMaster&quot;/&gt;   &lt;/bean&gt;   &lt;bean id=&quot;twoTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceTwoMaster&quot;/&gt;   &lt;/bean&gt;</code></pre><p>一般我们会有主从数据源，事务是要挂在数据源上的，那么要挂在哪个源？能做插入和修改的源肯定是主库的源，因此dataSource取有写权限的源即可。</p><p>如果想用ChainedTransactionManager，需要配置多个事务，每个事务的源就是想要做动态切换数据源的master源。如下配置就是多事务链式管理器的配置。</p><pre><code>&lt;!-- 多事务绑定 --&gt;  &lt;bean id=&quot;chainedTransactionManager&quot; class=&quot;org.springframework.data.transaction.ChainedTransactionManager&quot;&gt;      &lt;constructor-arg&gt;          &lt;array&gt;              &lt;ref bean=&quot;oneTransactionManager&quot;/&gt;              &lt;ref bean=&quot;twoTransactionManager&quot;/&gt;          &lt;/array&gt;      &lt;/constructor-arg&gt;  &lt;/bean&gt;</code></pre><p>在事务管理器中的dataSource，不能是动态切换数据源配置的dataSource，而是各库的dataSource配置。动态数据源的dataSource接入了太多的数据源，如果配置上动态数据源的source，ChainedTransactionManager不生效。实际上，动态数据源的dataSource是聚合了各库（主从，多主从）的dataSource配置。</p><p>使用：在Transication注解中指明使用链式事务管理器即可。</p><pre><code>@Transactional(value = &quot;chainedTransactionManager&quot;, rollbackFor = Exception.class)</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常用正则表达式</title>
       <link href="/2019/05/23/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
       <url>/2019/05/23/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>

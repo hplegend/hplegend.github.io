@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="日常总结,">
+  <meta name="keywords" content="web,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="首先介绍一下HTTP的工作原理。HTTP是超文本传输协议的简称，在TCP/IP协议中位于第四层或者说是第七层，属于应用层协议。HTTP作为客户端与服务器交互的应用协议，工作方式是先由客户端发起请求到服务器，服务器接收到请求响应数据，即完成一次HTTP的交互。因此，可以说HTTP实际上就是用户web浏览器与web服务器请求与响应的交互方式。一次请求就是一次HTTP交互，交互完成，本次HTTP交互就结">
-<meta name="keywords" content="日常总结">
+<meta name="description" content="####背景 随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="长连接与短链接">
-<meta property="og:url" content="https://hplegend.github.io/2019/05/10/长连接与短连接/index.html">
+<meta property="og:title" content="ChainedTransactionManager">
+<meta property="og:url" content="https://hplegend.github.io/2019/05/29/ChainedTransactionManager/index.html">
 <meta property="og:site_name" content="Hplegend">
-<meta property="og:description" content="首先介绍一下HTTP的工作原理。HTTP是超文本传输协议的简称，在TCP/IP协议中位于第四层或者说是第七层，属于应用层协议。HTTP作为客户端与服务器交互的应用协议，工作方式是先由客户端发起请求到服务器，服务器接收到请求响应数据，即完成一次HTTP的交互。因此，可以说HTTP实际上就是用户web浏览器与web服务器请求与响应的交互方式。一次请求就是一次HTTP交互，交互完成，本次HTTP交互就结">
+<meta property="og:description" content="####背景 随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-11T14:55:22.017Z">
+<meta property="og:updated_time" content="2019-05-29T12:40:43.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="长连接与短链接">
-<meta name="twitter:description" content="首先介绍一下HTTP的工作原理。HTTP是超文本传输协议的简称，在TCP/IP协议中位于第四层或者说是第七层，属于应用层协议。HTTP作为客户端与服务器交互的应用协议，工作方式是先由客户端发起请求到服务器，服务器接收到请求响应数据，即完成一次HTTP的交互。因此，可以说HTTP实际上就是用户web浏览器与web服务器请求与响应的交互方式。一次请求就是一次HTTP交互，交互完成，本次HTTP交互就结">
+<meta name="twitter:title" content="ChainedTransactionManager">
+<meta name="twitter:description" content="####背景 随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://hplegend.github.io/2019/05/10/长连接与短连接/">
+  <link rel="canonical" href="https://hplegend.github.io/2019/05/29/ChainedTransactionManager/">
 
 
 
 
 
-  <title>长连接与短链接 | Hplegend</title>
+  <title>ChainedTransactionManager | Hplegend</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/05/10/长连接与短连接/">
+    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/05/29/ChainedTransactionManager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hplegend">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">长连接与短链接</h1>
+          <h1 class="post-title" itemprop="name headline">ChainedTransactionManager</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T19:24:17+08:00">
-                2019-05-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T20:38:32+08:00">
+                2019-05-29
               </time>
             
 
@@ -292,28 +292,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,16 +320,56 @@
       
 
       
-        <p>首先介绍一下HTTP的工作原理。HTTP是超文本传输协议的简称，在TCP/IP协议中位于第四层或者说是第七层，属于应用层协议。HTTP作为客户端与服务器交互的应用协议，工作方式是先由客户端发起请求到服务器，服务器接收到请求响应数据，即完成一次HTTP的交互。因此，可以说HTTP实际上就是用户web浏览器与web服务器请求与响应的交互方式。一次请求就是一次HTTP交互，交互完成，本次HTTP交互就结束了。那么，HTTP有长连接和短连接的说法吗？</p>
-<p>HTTP的交互，到底是怎样的呢？简单的文字描述：</p>
-<p>在浏览器输入url地址，浏览器解析url对应的ip，然后封装数据包，与服务器建立TCP连接，完成三次握手和四次挥手后开始进行数据传输，数据传输完成后，关闭TCP连接，结束本次请求。细心观察的同学，在浏览器的下方，可以看到交互的几个阶段： 发起请求，建立连接，响应，结束。一次HTTP请求的基本过程就是上面说的。那么继续回答HTTP有长连接和短连接吗？长连接，顾名思义就是保持连接不断，那么一次HTTP请求要一直保持吗？数据传输完了还继续保持HTTP连接有意义吗？ apparently，HTTP不应该保持长连接，因为一次HTTP交互完成了数据的请求响应，没必要保持，因为下一次HTTP交互可能请求的不是之前的资源，保持连接也是浪费。那么我们常说的HTTP长连接与短链接是指什么呢？ 前面也提到了，HTTP是应用层的协议，按照协议栈的设计思想，下层协议为上次提供服务，应用层是最高层，因此是服务使用方，使用下层，也就是TCP的服务，TCP提供啥服务呢——可靠传输服务。另外，TCP层提供的服务，在应用层是可以共享的，也就是说多个HTTP是可以共享一个TCP连接的。到这里，渐渐的明了，实际上HTTP所谓的长短连接，其实是TCP的长短连接。因为TCP为上层提供服务，因此维护长连接TCP是由意义的，TCP的建立过程需要三次握手和四次挥手，过程比较费时。</p>
-<p>长连接与短连接，实际上是TCP采用长连接还是短连接，换句话说是维持TCP一段实际还是立即关闭TCP连接。熟悉java线程池的同学，可以回顾一下创建线程池对象的方法，里面有一个参数：表示当线程空闲多长时间后，就回收线程的参数，其实这里也有一点那个意思。</p>
-<p>长短连接有什么优缺点呢？</p>
-<p>长连接：一直保持连接，复用连接，连接池用的就是长连接。比如说我们常用的数据库连接池，TCP连接就是长连接。长连接的优点就是复用，但是复用是在同一客户端和服务器的连接上复用，如果连接过多，服务端的连接会不够用；</p>
-<p>短连接：用完就释放。短连接的优点就是不占用连接，可以接受更多的连接请求，确定就是频繁的创建TCP，开销大。如果请求过多，会有大量的TCP建立释放，如果服务端处理不过来的话，就会常出现很多TIME_WAIT 状态，出现服务不可用的情况。</p>
-<p>总结：频繁的请求，还是不要用短连接，不然处理不过来；如果请求不频繁，视情况而定吧。</p>
-<p>长短连接遇到的问题： 数据库没有连接池，频繁的做insert，近每分钟10W的insert量，结果一会就出现了连接不够用的情况，系统的load持续彪，出现了大量的TIME_WAIT状态，系统基本死了。 用数据库连接池后，问题就解决了。</p>
+        <p>####背景</p>
+<p>随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异常而影响核心业务。既然db分部在不同的数据库，而我们在某些业务需求中是 会存在同时更新多数据库上的表的需求的（主要是系统后期，不断的拆分业务、分库分表等等）。</p>
+<p>####传统spring事务存在的问题</p>
+<p>传统的Spring事务@Transicational仅支持单数据源，也就是说如果在有@Transicational注解的方法内，继续调用其他的方法，且其他方法需要切换数据源，那么很遗憾，这样做行不通。肯定会报“XXX relation not exsist”的异常，因为切换数据源无效，会在当前数据源执行sql，那么肯定就会出现找不到表的情况了。</p>
+<p>那么为什么@Transicational注解不支持数据源切换呢？</p>
+<p>####不加事务@Transication是在什么时候获取db链接的</p>
+<p>在获取db链接前，需要获取当前的数据源。对于配置了动态数据源切换的，是在DynamicDataSource.determineCurrentLookupKey里面。其核心是：org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource#determineTargetDataSource。</p>
+<p>获取connection是从Transication中，默认也就是SpringManagedTransaction。SpringManagedTransaction的创建：</p>
+<p>org.mybatis.spring.SqlSessionUtils#getSqlSession(org.apache.ibatis.session.SqlSessionFactory, org.apache.ibatis.session.ExecutorType, org.springframework.dao.support.PersistenceExceptionTranslator)。默认情况，dataSource是多数据源的AbstractDataSource，因此无法确定具体有哪个源。</p>
+<p>####加事务@Transication是在什么时候获取db链接的</p>
+<p>加了@Transication注解，开启事务事务在@Transication拦截器，因此，在开启事务的时候就获取了dataSource和connection，这个时候还没有执行数据源切换注解。因此，在后面执行了切换注解后，但是却不从里面拿connection，因此导致的切换无效。</p>
+<p>下面的截图是开启事务时，mybatis执行的栈，可以看到connection没有替换为新的，也就是说开启事务后，切换数据的注解失效了。为啥呢？ 不用事务注解，是在执行的时候取拿链接；使用了注解，在事务拦截器中开启事务的时候拿链接。</p>
+<p>猜测： 在mybatis执行的时候，如果没有连接，就取拿链接，如果有链接，就沿用老的链接。</p>
+<p>通过debug代码，我们发现一个很重要的函数：org.mybatis.spring.transaction.SpringManagedTransaction#openConnection，db connection从这个函数中获取，而这里又是从dataSource获取，因此归根在于切换数据源没有替换到dataSource。未加注解，注入的是DynamicDataSource，因此在拿链接的时候，会调用DynamicDataSource重写的方法，进而拿到动态数据源切换的修改的数据源。 加上注解，在开启事务的时候也会从DynamicDataSource拿链接，但是此时的数据源切换还未生效。为什么会这样呢？查看一下org.springframework.jdbc.datasource.DataSourceTransactionManager#doBegin， 开启事务的时候，把connection写入了到了ConnectList中，在mybati中openConnection再次根据source获取connection的时候直接从list中获取，而不是从dataSource中再次获取一个connection，这个connection list是存在在ThreadLocal里面的。</p>
+<pre><code>ConnectionHolder conHolder = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);
+if (conHolder != null &amp;&amp; (conHolder.hasConnection() || conHolder.isSynchronizedWithTransaction())) {
+</code></pre><p>究其原因，还是在于开启事务的时候，把dataSource放进了threadLocal里面，在拿去connection的时候会判断事务类型，如果之前开启了事务，就会从threadLocal里面取source。。。 。查看事务开启的代码TranscationalInterceptor，下面这段代码就是绑定绑定connection和datasource的代码，根据datasource取出来的connection列表入股有connection，那么就不会再去拿connection，这样就导致了后面通过注解切换数据库修改的datasource无效。</p>
+<pre><code>if (txObject.isNewConnectionHolder()) {
+   TransactionSynchronizationManager.bindResource(getDataSource(), txObject.getConnectionHolder());
+}
+</code></pre><p>####ChainedTransactionManager</p>
+<p>pom依赖配置：</p>
+<pre><code> &lt;dependency&gt;
+               &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+               &lt;artifactId&gt;spring-data-commons&lt;/artifactId&gt;
+               &lt;spring.data.commons&gt;1.13.6.RELEASE&lt;/spring.data.commons&gt;
+&lt;/dependency&gt;
+</code></pre><p>事务配置：</p>
+<pre><code>&lt;bean id=&quot;oneTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceMaster&quot;/&gt;
+   &lt;/bean&gt;
 
+   &lt;bean id=&quot;twoTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceTwoMaster&quot;/&gt;
+   &lt;/bean&gt;
+</code></pre><p>一般我们会有主从数据源，事务是要挂在数据源上的，那么要挂在哪个源？能做插入和修改的源肯定是主库的源，因此dataSource取有写权限的源即可。</p>
+<p>如果想用ChainedTransactionManager，需要配置多个事务，每个事务的源就是想要做动态切换数据源的master源。如下配置就是多事务链式管理器的配置。</p>
+<pre><code>&lt;!-- 多事务绑定 --&gt;
+  &lt;bean id=&quot;chainedTransactionManager&quot; class=&quot;org.springframework.data.transaction.ChainedTransactionManager&quot;&gt;
+      &lt;constructor-arg&gt;
+          &lt;array&gt;
+              &lt;ref bean=&quot;oneTransactionManager&quot;/&gt;
+              &lt;ref bean=&quot;twoTransactionManager&quot;/&gt;
+          &lt;/array&gt;
+      &lt;/constructor-arg&gt;
+  &lt;/bean&gt;
+</code></pre><p>在事务管理器中的dataSource，不能是动态切换数据源配置的dataSource，而是各库的dataSource配置。动态数据源的dataSource接入了太多的数据源，如果配置上动态数据源的source，ChainedTransactionManager不生效。实际上，动态数据源的dataSource是聚合了各库（主从，多主从）的dataSource配置。</p>
+<p>使用：在Transication注解中指明使用链式事务管理器即可。</p>
+<pre><code>@Transactional(value = &quot;chainedTransactionManager&quot;, rollbackFor = Exception.class)
+</code></pre>
       
     </div>
     
@@ -368,7 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/日常总结/" rel="tag"># 日常总结</a>
+            <a href="/tags/web/" rel="tag"># web</a>
           
         </div>
       
@@ -381,15 +399,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/23/常用正则表达式/" rel="next" title="常用正则表达式">
+                <i class="fa fa-chevron-left"></i> 常用正则表达式
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/23/常用正则表达式/" rel="prev" title="常用正则表达式">
-                常用正则表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

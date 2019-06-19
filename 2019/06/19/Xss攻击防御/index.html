@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Xss 攻击示例1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser 1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;marquee onwheel=alert`xsser`&amp;gt; 1&amp;gt;&amp;lt;script&amp;g">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xss攻击防御">
+<meta property="og:url" content="https://hplegend.github.io/2019/06/19/Xss攻击防御/index.html">
+<meta property="og:site_name" content="Hplegend">
+<meta property="og:description" content="Xss 攻击示例1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser 1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;marquee onwheel=alert`xsser`&amp;gt; 1&amp;gt;&amp;lt;script&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://hplegend.github.io/2019/06/19/Xss攻击防御/xssFilterClass.png">
+<meta property="og:updated_time" content="2019-06-19T09:59:57.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xss攻击防御">
+<meta name="twitter:description" content="Xss 攻击示例1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser 1&amp;gt;&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;lt;marquee%20onwheel=alertxsser&amp;gt; 1&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;marquee onwheel=alert`xsser`&amp;gt; 1&amp;gt;&amp;lt;script&amp;g">
+<meta name="twitter:image" content="https://hplegend.github.io/2019/06/19/Xss攻击防御/xssFilterClass.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hplegend.github.io/2019/06/19/Xss攻击防御/">
+
+
+
+
+
+  <title>Xss攻击防御 | Hplegend</title>
+  
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hplegend</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/06/19/Xss攻击防御/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hplegend">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hplegend">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Xss攻击防御</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T17:51:13+08:00">
+                2019-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/19/Xss攻击防御/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/19/Xss攻击防御/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Xss-攻击示例"><a href="#Xss-攻击示例" class="headerlink" title="Xss 攻击示例"></a>Xss 攻击示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;marquee%20onwheel=alertxsser</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;/script&gt;&lt;marquee onwheel=alert`xsser`&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;script&gt;alert(&apos;XSS&apos;)</span><br></pre></td></tr></table></figure>
+<h4 id="XSS-攻击的原理"><a href="#XSS-攻击的原理" class="headerlink" title="XSS 攻击的原理"></a>XSS 攻击的原理</h4><p>攻击者直接在把html脚本当做参数传递到接口，然后接口依旧按照原样把参数返回。前端同学把返回的参数拍到页面，然后浏览器把html脚本参数当做正常的html执行，最终就导致了XSS攻击。</p>
+<p>举个栗子：</p>
+<p>发起如下的请求 –&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://xxxxx?paramOne=&gt;&lt;marquee%20onwheel=alertxsser&gt;&amp;paramTwo=bob</span><br></pre></td></tr></table></figure>
+<p>后端不对传入参数做处理，直接再拍回页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;xx&quot; name=&quot;xx&quot; type=&quot;text&quot; value=$&#123;paramOne&#125;/&gt; </span><br><span class="line">最终的结果：</span><br><span class="line">&lt;input id=&quot;xx&quot; name=&quot;xx&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&gt;&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
+<p>糟糕，&gt;&lt;marquee%20onwheel=alertxsser&gt; 这段代码会被当做正常的html执行，那么结果就是“页面开始滚动，或者页面出现一些奇怪的非正常页面展示”。</p>
+<p>总结一下： XSS攻击就是攻击者把html作为参数传递给后端接口，后端接口把参数再原封不动的拍回页面展示。对于浏览器，它是无法识别参数是正常参数还是攻击脚本，它只能解释执行所有的html标签。</p>
+<h4 id="XSS-防御"><a href="#XSS-防御" class="headerlink" title="XSS 防御"></a>XSS 防御</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">private static final String XSS_SCRIPT_PATTERN = &quot;(?si)((&lt;script.*?&gt;[\\S\\s]*?&lt;\\/script&gt;)|(&lt;script.*?/&gt;)|(&lt;.*?script&gt;))&quot;;</span><br><span class="line">private static final String XSS_STYLE_PATTERN = &quot;&lt;[\\s]*?style[^&gt;]*?&gt;[\\s\\S]*?&lt;[\\s]*?\\/[\\s]*?style[\\s]*?&gt;&quot;;</span><br><span class="line">private static final String XSS_HTML_PATTERN = &quot;((&lt;[^&gt;]+&gt;) |(&gt;.*&lt;))&quot;;</span><br><span class="line"></span><br><span class="line">private static final String XSS_KEY_WORD_SCRIPT = &quot;script&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_STYLE = &quot;style&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_HTML_LEFT_CORNER = &quot;&lt;&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_HTML_RIGHT_CORNER = &quot;&gt;&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public static String detectXssAndReplaceJavaScript(String str) &#123;</span><br><span class="line">   if (StringUtils.isEmpty(str)) &#123;</span><br><span class="line">      return str;</span><br><span class="line">   &#125;</span><br><span class="line">   String lowerCaseSrc = str.toLowerCase();</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_SCRIPT)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_SCRIPT_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: script, str=&#123;&#125;&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_HTML_LEFT_CORNER) || lowerCaseSrc.contains(XSS_KEY_WORD_HTML_RIGHT_CORNER)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_HTML_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         // do escape</span><br><span class="line">         // lowerCaseSrc = lowerCaseSrc.replaceAll(&quot;&lt;&quot;, &quot;&amp;lt;&quot;).replaceAll(&quot;&gt;&quot;, &quot;&amp;gt;&quot;);</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: &lt;&gt;, originStr=[&#123;&#125;]&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_STYLE)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_STYLE_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: style, str=&#123;&#125;&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   return str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 检查xss攻击，返回转义html标签后的字符串</span><br><span class="line"> * */</span><br><span class="line">public static String detectAndEscapeHtmlXss(String str) &#123;</span><br><span class="line">   if (StringUtils.isEmpty(str)) &#123;</span><br><span class="line">      return str;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (str.contains(XSS_KEY_WORD_HTML_LEFT_CORNER) || str.contains(XSS_KEY_WORD_HTML_RIGHT_CORNER)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_HTML_PATTERN).matcher(str);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         // do escape</span><br><span class="line">         String var = str</span><br><span class="line">               .replaceAll(&quot;&lt;&quot;, &quot;&amp;lt;&quot;)</span><br><span class="line">               .replaceAll(&quot;&gt;&quot;, &quot;&amp;gt;&quot;)</span><br><span class="line">               .replaceAll(&quot;&amp;&quot;, &quot;&amp;amps;&quot;)</span><br><span class="line">               .replaceAll(&quot;\&quot;&quot;, &quot;&amp;quot;&quot;)</span><br><span class="line">               .replaceAll(&quot;\&apos;&quot;, &quot;&amp;#x27;&quot;)</span><br><span class="line">               .replaceAll(&quot;/&quot;, &quot;&amp;#x2F;&quot;);</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: &lt;&gt;, originStr=[&#123;&#125;], replaced=[&#123;&#125;]&quot;, str, var);</span><br><span class="line">         str = var;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="XSS在项目中的实践落地"><a href="#XSS在项目中的实践落地" class="headerlink" title="XSS在项目中的实践落地"></a>XSS在项目中的实践落地</h4><p>   Servlet Filter + HttpServletRequestWrapper</p>
+<p>Filter的作用是针对特定的uri进行拦截，并不是全局的的uri都过滤</p>
+<p>HttpServletRequestWrapper主要是用于修改reqeust parameter的值。</p>
+<p>下面是类图和时序图:</p>
+<p><img src="/2019/06/19/Xss攻击防御/xssFilterClass.png" alt="1560937935687"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/29/ChainedTransactionManager/" rel="next" title="ChainedTransactionManager">
+                <i class="fa fa-chevron-left"></i> ChainedTransactionManager
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hplegend</p>
+              <p class="site-description motion-element" itemprop="description">To Strive To Become A Good Habbit</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Xss-攻击示例"><span class="nav-number">1.</span> <span class="nav-text">Xss 攻击示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XSS-攻击的原理"><span class="nav-number">2.</span> <span class="nav-text">XSS 攻击的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XSS-防御"><span class="nav-number">3.</span> <span class="nav-text">XSS 防御</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XSS在项目中的实践落地"><span class="nav-number">4.</span> <span class="nav-text">XSS在项目中的实践落地</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hplegend</span>
+
+  
+</div>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'hplegend',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '5e4d986b388dadb91bde8405d883b3e7cf1cf595',
+            
+                client_id: 'Iv1.7801e4f0109dcc8f'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

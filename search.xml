@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>jvm agent</title>
+      <link href="/2019/11/08/jvm-agent/"/>
+      <url>/2019/11/08/jvm-agent/</url>
+      
+        <content type="html"><![CDATA[<p>test</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FastJson如何直接修改json string的字段内容</title>
+      <link href="/2019/06/20/FastJson%E5%A6%82%E4%BD%95%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9json-string%E7%9A%84%E5%AD%97%E6%AE%B5%E5%86%85%E5%AE%B9/"/>
+      <url>/2019/06/20/FastJson%E5%A6%82%E4%BD%95%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9json-string%E7%9A%84%E5%AD%97%E6%AE%B5%E5%86%85%E5%AE%B9/</url>
+      
+        <content type="html"><![CDATA[<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>假设我们有有一个json如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Xss攻击防御</title>
       <link href="/2019/06/19/Xss%E6%94%BB%E5%87%BB%E9%98%B2%E5%BE%A1/"/>
       <url>/2019/06/19/Xss%E6%94%BB%E5%87%BB%E9%98%B2%E5%BE%A1/</url>

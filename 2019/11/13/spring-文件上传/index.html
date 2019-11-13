@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="web,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="背景假设我们有有一个json如下： 12">
-<meta name="keywords" content="web">
+<meta name="description" content="1、单文件上传 1234567891011public JsonData uploadImageToServer(@RequestParam(&quot;file&quot;) MultipartFile file) throws IOException &amp;#123;       byte[] bytes = file.getBytes();       File imageFile = new File(&quot;/hom">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FastJson如何直接修改json string的字段内容">
-<meta property="og:url" content="https://hplegend.github.io/2019/06/20/FastJson如何直接修改json-string的字段内容/index.html">
+<meta property="og:title" content="spring 文件上传">
+<meta property="og:url" content="https://hplegend.github.io/2019/11/13/spring-文件上传/index.html">
 <meta property="og:site_name" content="Hplegend">
-<meta property="og:description" content="背景假设我们有有一个json如下： 12">
+<meta property="og:description" content="1、单文件上传 1234567891011public JsonData uploadImageToServer(@RequestParam(&quot;file&quot;) MultipartFile file) throws IOException &amp;#123;       byte[] bytes = file.getBytes();       File imageFile = new File(&quot;/hom">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-08T02:44:48.612Z">
+<meta property="og:image" content="https://hplegend.github.io/2019/11/13/spring-文件上传/image-20191113202022685.png">
+<meta property="og:updated_time" content="2019-11-13T12:25:40.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FastJson如何直接修改json string的字段内容">
-<meta name="twitter:description" content="背景假设我们有有一个json如下： 12">
+<meta name="twitter:title" content="spring 文件上传">
+<meta name="twitter:description" content="1、单文件上传 1234567891011public JsonData uploadImageToServer(@RequestParam(&quot;file&quot;) MultipartFile file) throws IOException &amp;#123;       byte[] bytes = file.getBytes();       File imageFile = new File(&quot;/hom">
+<meta name="twitter:image" content="https://hplegend.github.io/2019/11/13/spring-文件上传/image-20191113202022685.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://hplegend.github.io/2019/06/20/FastJson如何直接修改json-string的字段内容/">
+  <link rel="canonical" href="https://hplegend.github.io/2019/11/13/spring-文件上传/">
 
 
 
 
 
-  <title>FastJson如何直接修改json string的字段内容 | Hplegend</title>
+  <title>spring 文件上传 | Hplegend</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/06/20/FastJson如何直接修改json-string的字段内容/">
+    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/11/13/spring-文件上传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hplegend">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FastJson如何直接修改json string的字段内容</h1>
+          <h1 class="post-title" itemprop="name headline">spring 文件上传</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T19:39:38+08:00">
-                2019-06-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T11:46:52+08:00">
+                2019-11-13
               </time>
             
 
@@ -293,6 +295,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -301,8 +325,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/20/FastJson如何直接修改json-string的字段内容/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/20/FastJson如何直接修改json-string的字段内容/" itemprop="commentsCount"></span>
+                <a href="/2019/11/13/spring-文件上传/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/11/13/spring-文件上传/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,8 +354,13 @@
       
 
       
-        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>假设我们有有一个json如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>1、单文件上传</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> JsonData <span class="title">uploadImageToServer</span><span class="params">(@RequestParam(<span class="string">"file"</span>)</span> MultipartFile file) <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       <span class="keyword">byte</span>[] bytes = file.getBytes();</span><br><span class="line">       File imageFile = <span class="keyword">new</span> File(<span class="string">"/home/data/"</span> + file.getOriginalFilename());</span><br><span class="line"></span><br><span class="line">       FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(imageFile);</span><br><span class="line">       fileOutputStream.write(bytes);</span><br><span class="line">       fileOutputStream.close();</span><br><span class="line"></span><br><span class="line">       Optional&lt;String&gt; url = imageProcessor.push(file);</span><br><span class="line">       <span class="keyword">return</span> JsonData.success(url.get());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>直接用postman可以测试上传，需要注意： method要设置成post，header的ContentType要删除，一定要记得header中ContentType要删除，否则就会出现上传不了的问题。</p>
+<p>2、多文件上传</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> JsonData <span class="title">multiUploadImageToServer</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">       List&lt;String&gt; retList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">if</span> (request <span class="keyword">instanceof</span> MultipartHttpServletRequest) &#123;</span><br><span class="line">           MultiValueMap&lt;String, MultipartFile&gt; multipartFileMultiValueMap = ((MultipartHttpServletRequest) request).getMultiFileMap();</span><br><span class="line">           <span class="keyword">for</span> (String key : multipartFileMultiValueMap.keySet()) &#123;</span><br><span class="line">               List&lt;MultipartFile&gt; multipartFileList = multipartFileMultiValueMap.get(key);</span><br><span class="line">               <span class="keyword">if</span> (CollectionUtils.isEmpty(multipartFileList)) &#123;</span><br><span class="line">                   <span class="keyword">continue</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">for</span> (MultipartFile multipartFile : multipartFileList) &#123;</span><br><span class="line">                   Optional&lt;String&gt; url = imageProcessor.push(multipartFile);</span><br><span class="line">                   retList.add(url.get());</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> JsonData.success(retList);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>下图是postman测试的测试结果。多文件上传的主要在于把request转换成MultipartHttpServletRequest，并获取所有上传文件（MultipartFile集合），然后执行相应的上传操作。当然，对文件用postman测试依旧需要删除header的contentType，这个值你可能不主动设置，但是当你选择form-data的时候会自动帮你设置上，似乎有点disgusting~</p>
+<p><img src="/2019/11/13/spring-文件上传/image-20191113202022685.png" alt="image-20191113202115742"></p>
 
       
     </div>
@@ -349,7 +378,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web/" rel="tag"># web</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -362,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/19/Xss攻击防御/" rel="next" title="Xss攻击防御">
-                <i class="fa fa-chevron-left"></i> Xss攻击防御
+              <a href="/2019/11/11/leetcode-100-same-tree/" rel="next" title="leetcode - 100 same tree">
+                <i class="fa fa-chevron-left"></i> leetcode - 100 same tree
               </a>
             
           </div>
@@ -371,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/08/jvm-agent/" rel="prev" title="jvm agent">
-                jvm agent <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,17 +458,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,22 +521,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

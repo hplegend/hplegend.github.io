@@ -253,6 +253,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/11/15/web开发中的常用跨域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hplegend">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/hplegendTree.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hplegend's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/15/web开发中的常用跨域/" itemprop="url">web开发中的常用跨域</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-15T12:16:23+08:00">
+                2019-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/15/web开发中的常用跨域/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/11/14/相机成像的主点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -346,25 +472,24 @@
       
         
           
-            <h4 id="相机成像的基本模型"><a href="#相机成像的基本模型" class="headerlink" title="相机成像的基本模型"></a>相机成像的基本模型</h4><p><img src="/2019/11/14/相机成像的主点/image-20191114220541043.png" alt="image-20191114220541043"></p>
-<center>图1 小孔相机的基本模型</center>
+          相机成像的基本模型
+图1 小孔相机的基本模型
 
 
 
-<h4 id="主点的定义"><a href="#主点的定义" class="headerlink" title="主点的定义"></a>主点的定义</h4><p>从图1中，我们看到Z与像平面的焦点就是所谓的主单，用更官方的话讲：相机主光轴与像平面的焦点即是主点。那么在二维成像的原理中为啥需要这个内参：主点呢？</p>
-<h4 id="主点的坐标在相机内参中扮演的角色"><a href="#主点的坐标在相机内参中扮演的角色" class="headerlink" title="主点的坐标在相机内参中扮演的角色"></a>主点的坐标在相机内参中扮演的角色</h4><p><img src="/2019/11/14/相机成像的主点/image-20191114223713663.png" alt="image-20191114223713663"></p>
-<center>图2 二维成像原理</center>
+主点的定义从图1中，我们看到Z与像平面的焦点就是所谓的主单，用更官方的话讲：相机主光轴与像平面的焦点即是主点。那么在二维成像的原理中为啥需要这个内参：主点呢？
+主点的坐标在相机内参中扮演的角色
+图2 二维成像原理
 
-<p>上面的摄影方程公式就是最简单的根据焦距f把三维点投影到二维点的公式，这里的投影形成的二维平面称为<strong>像平面</strong>，其中像平面的坐标原点就是主点p。 然而我们在图像处理中都知道，图像的坐标要么位于左上角（OpenCV的图像窗口），要么位于左下角（OpenGL绘制的窗口），因此我们为了得到成像物体在图像中的像素坐标，我们需要进一步进行计算，即把像平面的点转换到图像平面上的点。</p>
-<p>下面的图很清楚的解释了主点在图像成像中的作用，我们是基于OpenCV的图像坐标来绘制我们的解释图。</p>
-<p><img src="/2019/11/14/相机成像的主点/image-20191114223102423.png" alt="image-20191114223102423"></p>
-<center>图3 主点坐标的作用</center>
-
-
-
-<p>用一句话解释主点： 原点位于图像坐标系的相机中心成像坐标系到图像坐标系间的平移向量。</p>
-
-          
+上面的摄影方程公式就是最简单的根
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/14/相机成像的主点/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -482,8 +607,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/14/ThreadLocal-详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -623,9 +755,15 @@
       
         
           
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given a binary tree, determine if it is height-balanced. </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// For this problem, a height-balanced binary tree is defined as: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">// a binary tree in which the left and right subtrees of every node differ in height by no more than 1. </span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Example 1: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Given the following tree [3,9,20,null,null,15,7]: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//    3</span></span><br><span class="line"><span class="comment">//   / \</span></span><br><span class="line"><span class="comment">//  9  20</span></span><br><span class="line"><span class="comment">//    /  \</span></span><br><span class="line"><span class="comment">//   15   7 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Return true. </span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//Example 2: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Given the following tree [1,2,2,3,3,null,null,4,4]: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  [1,2,2,3,null,null,3,4,null,null,4]</span></span><br><span class="line"><span class="comment">//       1</span></span><br><span class="line"><span class="comment">//      / \</span></span><br><span class="line"><span class="comment">//     2   2</span></span><br><span class="line"><span class="comment">//    / \</span></span><br><span class="line"><span class="comment">//   3   3</span></span><br><span class="line"><span class="comment">//  / \</span></span><br><span class="line"><span class="comment">// 4   4</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Return false.</span></span><br><span class="line"><span class="comment">// Related Topics Tree Depth-first Search</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//leetcode submit region begin(Prohibit modification and deletion)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> * int val;</span></span><br><span class="line"><span class="comment"> * TreeNode left;</span></span><br><span class="line"><span class="comment"> * TreeNode right;</span></span><br><span class="line"><span class="comment"> * TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 递归实现</span></span><br><span class="line">    <span class="comment">// 取左右子树的最大值比较</span></span><br><span class="line">    <span class="comment">// 递归出口返回0</span></span><br><span class="line">    <span class="comment">// 递归中间层+1返回</span></span><br><span class="line">    <span class="comment">// 从上到下依次，遇到不平衡即可返回</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">branchHeight</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 递归出口</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == node) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> leftH = branchHeight(node.left);</span><br><span class="line">        <span class="keyword">int</span> rightH = branchHeight(node.right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ret = (leftH &gt; rightH ? (leftH + <span class="number">1</span>) : (rightH + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存在的问题： 多次重复递归</span></span><br><span class="line"><span class="comment">     * 优化：能不能一次递归，把值深度记录下来？</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == root) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> leftH = branchHeight(root.left);</span><br><span class="line">        <span class="keyword">int</span> rightH = branchHeight(root.right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> isBalance = (-<span class="number">1</span> &lt;= (leftH - rightH) &amp;&amp; (leftH - rightH) &lt;= <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isBalance) &#123;</span><br><span class="line">            <span class="keyword">return</span> isBalanced(root.left) &amp;&amp; isBalanced(root.right);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> isBalance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//leetcode submit region end(Prohibit modification and deletion)</span></span><br></pre></td></tr></table></figure>
-
-          
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/13/110-Balanced-Binary-Tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -765,15 +903,16 @@
       
         
           
-            <p>1、单文件上传</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> JsonData <span class="title">uploadImageToServer</span><span class="params">(@RequestParam(<span class="string">"file"</span>)</span> MultipartFile file) <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       <span class="keyword">byte</span>[] bytes = file.getBytes();</span><br><span class="line">       File imageFile = <span class="keyword">new</span> File(<span class="string">"/home/data/"</span> + file.getOriginalFilename());</span><br><span class="line"></span><br><span class="line">       FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(imageFile);</span><br><span class="line">       fileOutputStream.write(bytes);</span><br><span class="line">       fileOutputStream.close();</span><br><span class="line"></span><br><span class="line">       Optional&lt;String&gt; url = imageProcessor.push(file);</span><br><span class="line">       <span class="keyword">return</span> JsonData.success(url.get());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>直接用postman可以测试上传，需要注意： method要设置成post，header的ContentType要删除，一定要记得header中ContentType要删除，否则就会出现上传不了的问题。</p>
-<p>2、多文件上传</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> JsonData <span class="title">multiUploadImageToServer</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">       List&lt;String&gt; retList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">if</span> (request <span class="keyword">instanceof</span> MultipartHttpServletRequest) &#123;</span><br><span class="line">           MultiValueMap&lt;String, MultipartFile&gt; multipartFileMultiValueMap = ((MultipartHttpServletRequest) request).getMultiFileMap();</span><br><span class="line">           <span class="keyword">for</span> (String key : multipartFileMultiValueMap.keySet()) &#123;</span><br><span class="line">               List&lt;MultipartFile&gt; multipartFileList = multipartFileMultiValueMap.get(key);</span><br><span class="line">               <span class="keyword">if</span> (CollectionUtils.isEmpty(multipartFileList)) &#123;</span><br><span class="line">                   <span class="keyword">continue</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">for</span> (MultipartFile multipartFile : multipartFileList) &#123;</span><br><span class="line">                   Optional&lt;String&gt; url = imageProcessor.push(multipartFile);</span><br><span class="line">                   retList.add(url.get());</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> JsonData.success(retList);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>下图是postman测试的测试结果。多文件上传的主要在于把request转换成MultipartHttpServletRequest，并获取所有上传文件（MultipartFile集合），然后执行相应的上传操作。当然，对文件用postman测试依旧需要删除header的contentType，这个值你可能不主动设置，但是当你选择form-data的时候会自动帮你设置上，似乎有点disgusting~</p>
-<p><img src="/2019/11/13/spring-文件上传/image-20191113202022685.png" alt="image-20191113202115742"></p>
-
-          
+          1、单文件上传
+1234567891011public JsonData uploadImageToServer(@RequestParam("file") MultipartFile file) throws IOException &#123;       byte[] bytes = file
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/13/spring-文件上传/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -913,11 +1052,17 @@
       
         
           
-            <p>级别： easy</p>
-<p>方法： 递归层序遍历</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given two binary trees, write a function to check if they are the same or not. </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Two binary trees are considered the same if they are structurally identical and the nodes have the same value. </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Example 1: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//Input:     1         1</span></span><br><span class="line"><span class="comment">//          / \       / \</span></span><br><span class="line"><span class="comment">//         2   3     2   3</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [1,2,3],   [1,2,3]</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//Output: true</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Example 2: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//Input:     1         1</span></span><br><span class="line"><span class="comment">//          /           \</span></span><br><span class="line"><span class="comment">//         2             2</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [1,2],     [1,null,2]</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//Output: false</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Example 3: </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//Input:     1         1</span></span><br><span class="line"><span class="comment">//          / \       / \</span></span><br><span class="line"><span class="comment">//         2   1     1   2</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [1,2,1],   [1,1,2]</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//Output: false</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 递归层序遍历即可</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1、递归的出口</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == p &amp;&amp; <span class="keyword">null</span> == q) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> ==p &amp;&amp; <span class="keyword">null</span> !=q) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != p &amp;&amp; <span class="keyword">null</span> ==q) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2、递归的递进条件</span></span><br><span class="line">        <span class="keyword">if</span>( p.val != q.val) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> isLeftSame =  isSameTree(p.left,q.left);</span><br><span class="line">        <span class="keyword">if</span>(!isLeftSame) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> isRightSame =  isSameTree(p.right,q.right);</span><br><span class="line">        <span class="keyword">return</span> isLeftSame &amp;&amp; isRightSame;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          级别： easy
+方法： 递归层序遍历
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/11/leetcode-100-same-tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1035,18 +1180,15 @@
       
         
           
-            <h4 id="MethodHandle实现动态调用"><a href="#MethodHandle实现动态调用" class="headerlink" title="MethodHandle实现动态调用"></a>MethodHandle实现动态调用</h4><p>下面这段代码基本上是从《深入理解java虚拟机》中拷贝出来的，在这里主要想说一下动态调用的理解。动态调用与面向对象中的多态很像，只不过多态在jvm层面并不是动态调用，而是基于虚方法表实现的。 jvm层面中的动态调用，就是只有在程序运行时，才知道最终用的哪个方法。就像下面的代码，根据当前的机器时钟是否是4的倍数，确定时用System.out的println还是自己写的println。 熟悉反射的同学，可能觉得这里的代码跟反射太像了，确实跟反射很像，但是与反射还是有很大的差别。反射是获取类的定义，进而找到方法并执行，反射中包括了很多类和方法的描述信息，但是methodHandle却不包含这些信息。methodHandle是jvm新增指令InvokeDynamic在java代码层面的实现，InvokeDynamic指令是通过Dynamic Call Site 动态调用点来执行方法，因此可以简单的理解为：methodHandle和Dynamic call site实际上就是包含了某一个真实方法执行所需的核心参数的封装对象，这些核心参数主要包括：方法的真实地址（或者方法所属真实对象），参数和返回值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hplegend.jvm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.invoke.MethodHandle;</span><br><span class="line"><span class="keyword">import</span> java.lang.invoke.MethodType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.invoke.MethodHandles.lookup;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hplegend</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/11/9 14:10</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InvokeDynamicTestOne</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassA</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">println</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"InvokeDynamicTestOne.ClassA.println: "</span> + msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object outObj = System.currentTimeMillis() % <span class="number">4</span> == <span class="number">0</span> ? System.out : <span class="keyword">new</span> ClassA();</span><br><span class="line">        MethodHandle methodHandle = <span class="keyword">null</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            MethodType mt = MethodType.methodType(<span class="keyword">void</span>.class, String.class);</span><br><span class="line">            methodHandle = lookup().findVirtual(outObj.getClass(), <span class="string">"println"</span>, mt).bindTo(outObj);</span><br><span class="line">        &#125;</span><br><span class="line">        methodHandle.invokeExact(<span class="string">"hplegend"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过动态调用我们能干什么呢？ 最简单的就是改造多态调用，例如我们在一个绘图程序的draw方法中，根据传入的不同对象实现不同形状的绘制，那么如果我们改成传入不同的形状参数，动态的去寻找对于对象的methodHandle来实现多态性？ 看看下面的代码（当然只是举例子，不要较真）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hplegend.jvm;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hplegend</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/11/9 14:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I'am a circle"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hplegend.jvm;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hplegend</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/11/9 14:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I'am a rectangle"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hplegend.jvm;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hplegend</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/11/9 14:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Square</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I'am a square"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hplegend.jvm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.invoke.MethodHandle;</span><br><span class="line"><span class="keyword">import</span> java.lang.invoke.MethodType;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.invoke.MethodHandles.lookup;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hplegend</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/11/9 14:50</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicImplement</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXIT_CMD = <span class="string">"exit"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line"></span><br><span class="line">        HashMap&lt;String, Object&gt; nameObjectMap = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">        nameObjectMap.put(<span class="string">"circle"</span>, <span class="keyword">new</span> Circle());</span><br><span class="line">        nameObjectMap.put(<span class="string">"square"</span>, <span class="keyword">new</span> Square());</span><br><span class="line">        nameObjectMap.put(<span class="string">"rect"</span>, <span class="keyword">new</span> Rectangle());</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String shapeCmd;</span><br><span class="line">        <span class="keyword">while</span> (!EXIT_CMD.equals(shapeCmd = scanner.nextLine())) &#123;</span><br><span class="line"></span><br><span class="line">            Object shapeExe = nameObjectMap.get(shapeCmd);</span><br><span class="line">            MethodHandle methodHandle = <span class="keyword">null</span>;</span><br><span class="line">            &#123;</span><br><span class="line">                MethodType mt = MethodType.methodType(<span class="keyword">void</span>.class);</span><br><span class="line">                methodHandle = lookup().findVirtual(shapeExe.getClass(), <span class="string">"draw"</span>, mt).bindTo(shapeExe);</span><br><span class="line">            &#125;</span><br><span class="line">            methodHandle.invokeExact();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出的测试结果</p>
-<p><img src="/2019/11/09/invoke-dynamic的学习与应用/image-20191109145723730.png" alt="image-20191109145723730"></p>
-<p>上面这个例子的目的当然不是说多态不好，只是从动态调用的角度说明可以由程序员自己定义该用谁的哪个方法。 </p>
-
-          
+          MethodHandle实现动态调用下面这段代码基本上是从《深入理解java虚拟机》中拷贝出来的，在这里主要想说一下动态调用的理解。动态调用与面向对象中的多态很像，只不过多态在jvm层面并不是动态调用，而是基于虚方法表实现的。 jvm层面中的动态调用，就是只有在程序运行时，才知道最终用的哪个方法。就
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/09/invoke-dynamic的学习与应用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1186,9 +1328,16 @@
       
         
           
-            <p>test</p>
+          test
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/08/jvm-agent/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1306,10 +1455,17 @@
       
         
           
-            <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>假设我们有有一个json如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          背景假设我们有有一个json如下：
+12
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/20/FastJson如何直接修改json-string的字段内容/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1427,27 +1583,18 @@
       
         
           
-            <h4 id="Xss-攻击示例"><a href="#Xss-攻击示例" class="headerlink" title="Xss 攻击示例"></a>Xss 攻击示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;marquee%20onwheel=alertxsser</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;/script&gt;&lt;marquee onwheel=alert`xsser`&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;script&gt;alert(&apos;XSS&apos;)</span><br></pre></td></tr></table></figure>
-<h4 id="XSS-攻击的原理"><a href="#XSS-攻击的原理" class="headerlink" title="XSS 攻击的原理"></a>XSS 攻击的原理</h4><p>攻击者直接在把html脚本当做参数传递到接口，然后接口依旧按照原样把参数返回。前端同学把返回的参数拍到页面，然后浏览器把html脚本参数当做正常的html执行，最终就导致了XSS攻击。</p>
-<p>举个栗子：</p>
-<p>发起如下的请求 –&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://xxxxx?paramOne=&gt;&lt;marquee%20onwheel=alertxsser&gt;&amp;paramTwo=bob</span><br></pre></td></tr></table></figure>
-<p>后端不对传入参数做处理，直接再拍回页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;xx&quot; name=&quot;xx&quot; type=&quot;text&quot; value=$&#123;paramOne&#125;/&gt; </span><br><span class="line">最终的结果：</span><br><span class="line">&lt;input id=&quot;xx&quot; name=&quot;xx&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&gt;&lt;marquee%20onwheel=alertxsser&gt;</span><br></pre></td></tr></table></figure>
-<p>糟糕，&gt;&lt;marquee%20onwheel=alertxsser&gt; 这段代码会被当做正常的html执行，那么结果就是“页面开始滚动，或者页面出现一些奇怪的非正常页面展示”。</p>
-<p>总结一下： XSS攻击就是攻击者把html作为参数传递给后端接口，后端接口把参数再原封不动的拍回页面展示。对于浏览器，它是无法识别参数是正常参数还是攻击脚本，它只能解释执行所有的html标签。</p>
-<h4 id="XSS-防御"><a href="#XSS-防御" class="headerlink" title="XSS 防御"></a>XSS 防御</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">private static final String XSS_SCRIPT_PATTERN = &quot;(?si)((&lt;script.*?&gt;[\\S\\s]*?&lt;\\/script&gt;)|(&lt;script.*?/&gt;)|(&lt;.*?script&gt;))&quot;;</span><br><span class="line">private static final String XSS_STYLE_PATTERN = &quot;&lt;[\\s]*?style[^&gt;]*?&gt;[\\s\\S]*?&lt;[\\s]*?\\/[\\s]*?style[\\s]*?&gt;&quot;;</span><br><span class="line">private static final String XSS_HTML_PATTERN = &quot;((&lt;[^&gt;]+&gt;) |(&gt;.*&lt;))&quot;;</span><br><span class="line"></span><br><span class="line">private static final String XSS_KEY_WORD_SCRIPT = &quot;script&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_STYLE = &quot;style&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_HTML_LEFT_CORNER = &quot;&lt;&quot;;</span><br><span class="line">private static final String XSS_KEY_WORD_HTML_RIGHT_CORNER = &quot;&gt;&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public static String detectXssAndReplaceJavaScript(String str) &#123;</span><br><span class="line">   if (StringUtils.isEmpty(str)) &#123;</span><br><span class="line">      return str;</span><br><span class="line">   &#125;</span><br><span class="line">   String lowerCaseSrc = str.toLowerCase();</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_SCRIPT)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_SCRIPT_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: script, str=&#123;&#125;&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_HTML_LEFT_CORNER) || lowerCaseSrc.contains(XSS_KEY_WORD_HTML_RIGHT_CORNER)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_HTML_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         // do escape</span><br><span class="line">         // lowerCaseSrc = lowerCaseSrc.replaceAll(&quot;&lt;&quot;, &quot;&amp;lt;&quot;).replaceAll(&quot;&gt;&quot;, &quot;&amp;gt;&quot;);</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: &lt;&gt;, originStr=[&#123;&#125;]&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (lowerCaseSrc.contains(XSS_KEY_WORD_STYLE)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_STYLE_PATTERN).matcher(lowerCaseSrc);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: style, str=&#123;&#125;&quot;, str);</span><br><span class="line">         return &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   return str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 检查xss攻击，返回转义html标签后的字符串</span><br><span class="line"> * */</span><br><span class="line">public static String detectAndEscapeHtmlXss(String str) &#123;</span><br><span class="line">   if (StringUtils.isEmpty(str)) &#123;</span><br><span class="line">      return str;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   if (str.contains(XSS_KEY_WORD_HTML_LEFT_CORNER) || str.contains(XSS_KEY_WORD_HTML_RIGHT_CORNER)) &#123;</span><br><span class="line">      Matcher matcher = Pattern.compile(XSS_HTML_PATTERN).matcher(str);</span><br><span class="line">      if (matcher.find()) &#123;</span><br><span class="line">         // do escape</span><br><span class="line">         String var = str</span><br><span class="line">               .replaceAll(&quot;&lt;&quot;, &quot;&amp;lt;&quot;)</span><br><span class="line">               .replaceAll(&quot;&gt;&quot;, &quot;&amp;gt;&quot;)</span><br><span class="line">               .replaceAll(&quot;&amp;&quot;, &quot;&amp;amps;&quot;)</span><br><span class="line">               .replaceAll(&quot;\&quot;&quot;, &quot;&amp;quot;&quot;)</span><br><span class="line">               .replaceAll(&quot;\&apos;&quot;, &quot;&amp;#x27;&quot;)</span><br><span class="line">               .replaceAll(&quot;/&quot;, &quot;&amp;#x2F;&quot;);</span><br><span class="line">         logger.info(&quot;detectXssAndReplaceJavaScript, type: &lt;&gt;, originStr=[&#123;&#125;], replaced=[&#123;&#125;]&quot;, str, var);</span><br><span class="line">         str = var;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="XSS在项目中的实践落地"><a href="#XSS在项目中的实践落地" class="headerlink" title="XSS在项目中的实践落地"></a>XSS在项目中的实践落地</h4><p>   Servlet Filter + HttpServletRequestWrapper</p>
-<p>Filter的作用是针对特定的uri进行拦截，并不是全局的的uri都过滤</p>
-<p>HttpServletRequestWrapper主要是用于修改reqeust parameter的值。</p>
-<p>下面是类图和时序图:</p>
-<p><img src="/2019/06/19/Xss攻击防御/xssFilterClass.png" alt="1560937935687"></p>
-
-          
+          Xss 攻击示例1&gt;&lt;marquee%20onwheel=alertxsser
+1&gt;&lt;marquee%20onwheel=alertxsser&gt;
+1&lt;marquee%20onwheel=alertxsser&gt;
+1&gt;&lt;/script&gt;&lt;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/19/Xss攻击防御/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1587,32 +1734,15 @@
       
         
           
-            <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户评论相关表所在的db重要性要底，这样做主要是为了防止一些非核心业务的大量db查询导致db异常而影响核心业务。既然db分部在不同的数据库，而我们在某些业务需求中是 会存在同时更新多数据库上的表的需求的（主要是系统后期，不断的拆分业务、分库分表等等）。</p>
-<h4 id="传统spring事务存在的问题"><a href="#传统spring事务存在的问题" class="headerlink" title="传统spring事务存在的问题"></a>传统spring事务存在的问题</h4><p>传统的Spring事务@Transicational仅支持单数据源，也就是说如果在有@Transicational注解的方法内，继续调用其他的方法，且其他方法需要切换数据源，那么很遗憾，这样做行不通。肯定会报“XXX relation not exsist”的异常，因为切换数据源无效，会在当前数据源执行sql，那么肯定就会出现找不到表的情况了。</p>
-<p>那么为什么@Transicational注解不支持数据源切换呢？</p>
-<h5 id="不加事务-Transication是在什么时候获取db链接的"><a href="#不加事务-Transication是在什么时候获取db链接的" class="headerlink" title="不加事务@Transication是在什么时候获取db链接的"></a>不加事务@Transication是在什么时候获取db链接的</h5><p>在获取db链接前，需要获取当前的数据源。对于配置了动态数据源切换的，是在DynamicDataSource.determineCurrentLookupKey里面。其核心是：org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource#determineTargetDataSource。</p>
-<p>获取connection是从Transication中，默认也就是SpringManagedTransaction。SpringManagedTransaction的创建：</p>
-<p>org.mybatis.spring.SqlSessionUtils#getSqlSession(org.apache.ibatis.session.SqlSessionFactory, org.apache.ibatis.session.ExecutorType, org.springframework.dao.support.PersistenceExceptionTranslator)。默认情况，dataSource是多数据源的AbstractDataSource，因此无法确定具体有哪个源。</p>
-<h5 id="加事务-Transication是在什么时候获取db链接的"><a href="#加事务-Transication是在什么时候获取db链接的" class="headerlink" title="加事务@Transication是在什么时候获取db链接的"></a>加事务@Transication是在什么时候获取db链接的</h5><p>加了@Transication注解，开启事务事务在@Transication拦截器，因此，在开启事务的时候就获取了dataSource和connection，这个时候还没有执行数据源切换注解。因此，在后面执行了切换注解后，但是却不从里面拿connection，因此导致的切换无效。</p>
-<p>下面的截图是开启事务时，mybatis执行的栈，可以看到connection没有替换为新的，也就是说开启事务后，切换数据的注解失效了。为啥呢？ 不用事务注解，是在执行的时候取拿链接；使用了注解，在事务拦截器中开启事务的时候拿链接。</p>
-<p>猜测： 在mybatis执行的时候，如果没有连接，就取拿链接，如果有链接，就沿用老的链接。</p>
-<p><img src="/2019/05/29/ChainedTransactionManager/mybatisConnection.png" alt="1558945885600"></p>
-<p>通过debug代码，我们发现一个很重要的函数：org.mybatis.spring.transaction.SpringManagedTransaction#openConnection，db connection从这个函数中获取，而这里又是从dataSource获取，因此归根在于切换数据源没有替换到dataSource。未加注解，注入的是DynamicDataSource，因此在拿链接的时候，会调用DynamicDataSource重写的方法，进而拿到动态数据源切换的修改的数据源。 加上注解，在开启事务的时候也会从DynamicDataSource拿链接，但是此时的数据源切换还未生效。为什么会这样呢？查看一下org.springframework.jdbc.datasource.DataSourceTransactionManager#doBegin， 开启事务的时候，把connection写入了到了ConnectList中，在mybati中openConnection再次根据source获取connection的时候直接从list中获取，而不是从dataSource中再次获取一个connection，这个connection list是存在在ThreadLocal里面的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ConnectionHolder conHolder = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);</span><br><span class="line">if (conHolder != null &amp;&amp; (conHolder.hasConnection() || conHolder.isSynchronizedWithTransaction())) &#123;</span><br></pre></td></tr></table></figure>
-<p>究其原因，还是在于开启事务的时候，把dataSource放进了threadLocal里面，在拿去connection的时候会判断事务类型，如果之前开启了事务，就会从threadLocal里面取source。。。 。查看事务开启的代码TranscationalInterceptor，下面这段代码就是绑定绑定connection和datasource的代码，根据datasource取出来的connection列表入股有connection，那么就不会再去拿connection，这样就导致了后面通过注解切换数据库修改的datasource无效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (txObject.isNewConnectionHolder()) &#123;</span><br><span class="line">   TransactionSynchronizationManager.bindResource(getDataSource(), txObject.getConnectionHolder());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="ChainedTransactionManager"><a href="#ChainedTransactionManager" class="headerlink" title="ChainedTransactionManager"></a>ChainedTransactionManager</h4><p>pom依赖配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;dependency&gt;</span><br><span class="line">               &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;spring-data-commons&lt;/artifactId&gt;</span><br><span class="line">               &lt;spring.data.commons&gt;1.13.6.RELEASE&lt;/spring.data.commons&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<p>事务配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;oneTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceMaster&quot;/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">   &lt;bean id=&quot;twoTransactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceTwoMaster&quot;/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<p>一般我们会有主从数据源，事务是要挂在数据源上的，那么要挂在哪个源？能做插入和修改的源肯定是主库的源，因此dataSource取有写权限的源即可。</p>
-<p>如果想用ChainedTransactionManager，需要配置多个事务，每个事务的源就是想要做动态切换数据源的master源。如下配置就是多事务链式管理器的配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 多事务绑定 --&gt;</span><br><span class="line">  &lt;bean id=&quot;chainedTransactionManager&quot; class=&quot;org.springframework.data.transaction.ChainedTransactionManager&quot;&gt;</span><br><span class="line">      &lt;constructor-arg&gt;</span><br><span class="line">          &lt;array&gt;</span><br><span class="line">              &lt;ref bean=&quot;oneTransactionManager&quot;/&gt;</span><br><span class="line">              &lt;ref bean=&quot;twoTransactionManager&quot;/&gt;</span><br><span class="line">          &lt;/array&gt;</span><br><span class="line">      &lt;/constructor-arg&gt;</span><br><span class="line">  &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<p>在事务管理器中的dataSource，不能是动态切换数据源配置的dataSource，而是各库的dataSource配置。动态数据源的dataSource接入了太多的数据源，如果配置上动态数据源的source，ChainedTransactionManager不生效。实际上，动态数据源的dataSource是聚合了各库（主从，多主从）的dataSource配置。</p>
-<p>使用：在Transication注解中指明使用链式事务管理器即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(value = &quot;chainedTransactionManager&quot;, rollbackFor = Exception.class)</span><br></pre></td></tr></table></figure>
-
-          
+          背景随着业务增长，数据了增大，db可能成为了限制业务发展的瓶颈，可能会拆库分表等。一旦拆库分表，原来业务代码如果不做重构，那么可能就会在一个方法里面切换好几DB source，从不同的库里面取数据。另外，有些时候可能会对不同的业务场景，安排不同重要性的db，例如生单相关的表所在的db重要性最高，用户
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/29/ChainedTransactionManager/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1730,163 +1860,15 @@
       
         
           
-            <h4 id="java-使用正则表达式的方式"><a href="#java-使用正则表达式的方式" class="headerlink" title="java 使用正则表达式的方式"></a>java 使用正则表达式的方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String REG_PATTERN = <span class="string">"^[0-9]+$"</span>;</span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> Pattern pattern = Pattern.compile(REG_PATTERN);</span><br><span class="line"> </span><br><span class="line"> Matcher <span class="keyword">var</span> = pattern.matcher(param);</span><br><span class="line"> <span class="keyword">if</span> (<span class="keyword">var</span>.find()) &#123;</span><br><span class="line">     .......</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="常用的正则表达式收集"><a href="#常用的正则表达式收集" class="headerlink" title="常用的正则表达式收集"></a>常用的正则表达式收集</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">数字：^[0-9]*$</span><br><span class="line">n位的数字：^\d&#123;n&#125;$</span><br><span class="line">至少n位的数字：^\d&#123;n,&#125;$</span><br><span class="line">m-n位的数字：^\d&#123;m,n&#125;$</span><br><span class="line">零和非零开头的数字：^(0|[1-9][0-9]*)$</span><br><span class="line">非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]&#123;1,2&#125;)?$</span><br><span class="line">带1-2位小数的正数或负数：^(\-)?\d+(\.\d&#123;1,2&#125;)?$</span><br><span class="line">正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$</span><br><span class="line">有两位小数的正实数：^[0-9]+(.[0-9]&#123;2&#125;)?$</span><br><span class="line">有1~3位小数的正实数：^[0-9]+(.[0-9]&#123;1,3&#125;)?$</span><br><span class="line">非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*)&#123;1,3&#125;$ 或 ^\+?[1-9][0-9]*$</span><br><span class="line">非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$</span><br><span class="line">非负整数：^\d+$ 或 ^[1-9]\d*|0$</span><br><span class="line">非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</span><br><span class="line">非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</span><br><span class="line">非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</span><br><span class="line">正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</span><br><span class="line">负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</span><br><span class="line">浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">汉字：^[\u4e00-\u9fa5]&#123;0,&#125;$</span><br><span class="line">英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]&#123;4,40&#125;$</span><br><span class="line">长度为3-20的所有字符：^.&#123;3,20&#125;$</span><br><span class="line">由26个英文字母组成的字符串：^[A-Za-z]+$</span><br><span class="line">由26个大写英文字母组成的字符串：^[A-Z]+$</span><br><span class="line">由26个小写英文字母组成的字符串：^[a-z]+$</span><br><span class="line">由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</span><br><span class="line">由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w&#123;3,20&#125;$</span><br><span class="line">中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</span><br><span class="line">中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;$</span><br><span class="line">可以输入含有^%&amp;&apos;,;=?$\&quot;等字符：[^%&amp;&apos;,;=?$\x22]+</span><br><span class="line">禁止输入含有~的字符：[^~\x22]+</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</span><br><span class="line"> 域名：[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;(/.[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;)+/.?</span><br><span class="line"> InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</span><br><span class="line"> 手机号码：^(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9])\d&#123;8&#125;$ (由于工信部放号段不定时，所以建议使用泛解析 ^([1][3,4,5,6,7,8,9])\d&#123;9&#125;$)</span><br><span class="line"> 电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^(\(\d&#123;3,4&#125;-)|\d&#123;3.4&#125;-)?\d&#123;7,8&#125;$ </span><br><span class="line"> 国内电话号码(0511-4405222、021-87888822)：\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125; </span><br><span class="line"> 18位身份证号码(数字、字母x结尾)：^((\d&#123;18&#125;)|([0-9x]&#123;18&#125;)|([0-9X]&#123;18&#125;))$</span><br><span class="line"> 8 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$</span><br><span class="line"> 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w&#123;5,17&#125;$</span><br><span class="line"> 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$  </span><br><span class="line"> 日期格式：^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;</span><br><span class="line"> 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$</span><br><span class="line"> 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$ </span><br><span class="line"> 钱的输入格式：</span><br><span class="line">   1.有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^[1-9][0-9]*$ </span><br><span class="line">   2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$ </span><br><span class="line">   3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$ </span><br><span class="line">   4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$ </span><br><span class="line">   5.必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]&#123;2&#125;)?$ </span><br><span class="line">   6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]&#123;1,2&#125;)?$ </span><br><span class="line">   7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*(.[0-9]&#123;1,2&#125;)?$ </span><br><span class="line">   8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*)(.[0-9]&#123;1,2&#125;)?$  </span><br><span class="line">   备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</span><br><span class="line">xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</span><br><span class="line">中文字符的正则表达式：[\u4e00-\u9fa5]</span><br><span class="line">双字节字符：[^\x00-\xff]    (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</span><br><span class="line">空白行的正则表达式：\n\s*\r    (可以用来删除空白行)</span><br><span class="line">HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;    (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</span><br><span class="line">首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$)    (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</span><br><span class="line">腾讯QQ号：[1-9][0-9]&#123;4,&#125;    (腾讯QQ号从10000开始)</span><br><span class="line">中国邮政编码：[1-9]\d&#123;5&#125;(?!\d)    (中国邮政编码为6位数字)</span><br><span class="line">IP地址：\d+\.\d+\.\d+\.\d+    (提取IP地址时有用)</span><br><span class="line">IP地址：((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.)&#123;3&#125;(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))</span><br></pre></td></tr></table></figure>
-<h4 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h4><p><a href="https://www.cnblogs.com/zxin/archive/2013/01/26/2877765.html" target="_blank" rel="noopener">https://www.cnblogs.com/zxin/archive/2013/01/26/2877765.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/05/10/长连接与短连接/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hplegend">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/hplegendTree.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hplegend's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/10/长连接与短连接/" itemprop="url">长连接与短链接</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T19:24:17+08:00">
-                2019-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先介绍一下HTTP的工作原理。HTTP是超文本传输协议的简称，在TCP/IP协议中位于第四层或者说是第七层，属于应用层协议。HTTP作为客户端与服务器交互的应用协议，工作方式是先由客户端发起请求到服务器，服务器接收到请求响应数据，即完成一次HTTP的交互。因此，可以说HTTP实际上就是用户web浏览器与web服务器请求与响应的交互方式。一次请求就是一次HTTP交互，交互完成，本次HTTP交互就结束了。那么，HTTP有长连接和短连接的说法吗？</p>
-<p>HTTP的交互，到底是怎样的呢？简单的文字描述：</p>
-<p>在浏览器输入url地址，浏览器解析url对应的ip，然后封装数据包，与服务器建立TCP连接，完成三次握手和四次挥手后开始进行数据传输，数据传输完成后，关闭TCP连接，结束本次请求。细心观察的同学，在浏览器的下方，可以看到交互的几个阶段： 发起请求，建立连接，响应，结束。一次HTTP请求的基本过程就是上面说的。那么继续回答HTTP有长连接和短连接吗？长连接，顾名思义就是保持连接不断，那么一次HTTP请求要一直保持吗？数据传输完了还继续保持HTTP连接有意义吗？ apparently，HTTP不应该保持长连接，因为一次HTTP交互完成了数据的请求响应，没必要保持，因为下一次HTTP交互可能请求的不是之前的资源，保持连接也是浪费。那么我们常说的HTTP长连接与短链接是指什么呢？ 前面也提到了，HTTP是应用层的协议，按照协议栈的设计思想，下层协议为上次提供服务，应用层是最高层，因此是服务使用方，使用下层，也就是TCP的服务，TCP提供啥服务呢——可靠传输服务。另外，TCP层提供的服务，在应用层是可以共享的，也就是说多个HTTP是可以共享一个TCP连接的。到这里，渐渐的明了，实际上HTTP所谓的长短连接，其实是TCP的长短连接。因为TCP为上层提供服务，因此维护长连接TCP是由意义的，TCP的建立过程需要三次握手和四次挥手，过程比较费时。</p>
-<p>长连接与短连接，实际上是TCP采用长连接还是短连接，换句话说是维持TCP一段实际还是立即关闭TCP连接。熟悉java线程池的同学，可以回顾一下创建线程池对象的方法，里面有一个参数：表示当线程空闲多长时间后，就回收线程的参数，其实这里也有一点那个意思。</p>
-<p>长短连接有什么优缺点呢？</p>
-<p>长连接：一直保持连接，复用连接，连接池用的就是长连接。比如说我们常用的数据库连接池，TCP连接就是长连接。长连接的优点就是复用，但是复用是在同一客户端和服务器的连接上复用，如果连接过多，服务端的连接会不够用；</p>
-<p>短连接：用完就释放。短连接的优点就是不占用连接，可以接受更多的连接请求，确定就是频繁的创建TCP，开销大。如果请求过多，会有大量的TCP建立释放，如果服务端处理不过来的话，就会常出现很多TIME_WAIT 状态，出现服务不可用的情况。</p>
-<p>总结：频繁的请求，还是不要用短连接，不然处理不过来；如果请求不频繁，视情况而定吧。</p>
-<p>长短连接遇到的问题： 数据库没有连接池，频繁的做insert，近每分钟10W的insert量，结果一会就出现了连接不够用的情况，系统的load持续彪，出现了大量的TIME_WAIT状态，系统基本死了。 用数据库连接池后，问题就解决了。</p>
-
-          
+          java 使用正则表达式的方式1234567891011import java.util.regex.Matcher;import java.util.regex.Pattern; private static final String REG_PATTERN = "^[0-9]+$"; priva
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/23/常用正则表达式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1923,6 +1905,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1968,7 +1954,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

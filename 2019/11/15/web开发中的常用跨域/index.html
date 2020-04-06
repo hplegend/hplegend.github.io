@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="To Strive To Become A Good Habbit">
-<meta name="keywords" content="Hplegend">
+<meta name="description" content="interceptor的配置mvc:maping 的path配置的通配符：    配置符 说明 举例 能匹配上的路径     ? 匹配任何单字符 /api?hplegend /apiwhplegend;/apihhplegend   * 匹配0或者任意数量的字符 /api/* /api/hplegend;/api/legend   ** 匹配0或者更多的目录 /api/** /api/hplege">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web开发中的常用跨域">
 <meta property="og:url" content="https://hplegend.github.io/2019/11/15/web开发中的常用跨域/index.html">
 <meta property="og:site_name" content="Hplegend&#39;s blog">
-<meta property="og:description" content="To Strive To Become A Good Habbit">
+<meta property="og:description" content="interceptor的配置mvc:maping 的path配置的通配符：    配置符 说明 举例 能匹配上的路径     ? 匹配任何单字符 /api?hplegend /apiwhplegend;/apihhplegend   * 匹配0或者任意数量的字符 /api/* /api/hplegend;/api/legend   ** 匹配0或者更多的目录 /api/** /api/hplege">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-15T04:16:23.068Z">
+<meta property="og:updated_time" content="2019-11-18T04:29:57.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web开发中的常用跨域">
-<meta name="twitter:description" content="To Strive To Become A Good Habbit">
+<meta name="twitter:description" content="interceptor的配置mvc:maping 的path配置的通配符：    配置符 说明 举例 能匹配上的路径     ? 匹配任何单字符 /api?hplegend /apiwhplegend;/apihhplegend   * 匹配0或者任意数量的字符 /api/* /api/hplegend;/api/legend   ** 匹配0或者更多的目录 /api/** /api/hplege">
 
 
 
@@ -293,6 +293,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -330,7 +352,39 @@
       
 
       
-        
+        <h4 id="interceptor的配置"><a href="#interceptor的配置" class="headerlink" title="interceptor的配置"></a>interceptor的配置</h4><p><a href="mvc:maping" target="_blank" rel="noopener">mvc:maping</a> 的path配置的通配符：</p>
+<table>
+<thead>
+<tr>
+<th>配置符</th>
+<th>说明</th>
+<th>举例</th>
+<th>能匹配上的路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>?</td>
+<td>匹配任何单字符</td>
+<td>/api?hplegend</td>
+<td>/apiwhplegend;/apihhplegend</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0或者任意数量的字符</td>
+<td>/api/*</td>
+<td>/api/hplegend;/api/legend</td>
+</tr>
+<tr>
+<td>**</td>
+<td>匹配0或者更多的目录</td>
+<td>/api/**</td>
+<td>/api/hplegend;/api/hplegend/hp;</td>
+</tr>
+</tbody>
+</table>
+<p>tip：”/api/<em>“ 不能匹配上“/api/hplegend/hp”,只能匹配上“/api/hplegend” 。单个的“\</em>” 不能匹配新的子uri路径，也就是说单个的“*”只能匹配字符但是不包括”/“子路径。</p>
+
       
     </div>
     
@@ -344,6 +398,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
       
 
       
@@ -363,6 +423,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/18/http-中的get方法知多少/" rel="prev" title="http 中的get方法知多少">
+                http 中的get方法知多少 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -421,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -439,7 +512,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -450,7 +523,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -461,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -485,6 +558,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#interceptor的配置"><span class="nav-number">1.</span> <span class="nav-text">interceptor的配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -498,7 +587,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="计算机视觉,">
+  <meta name="keywords" content="python基础,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="CCD 简介：   CCD，英文全称：Charge-coupled Device，中文全称：电荷耦合元件。可以称为CCD图像传感器,也叫图像控制器。CCD是一种半导体器件，能够把光学影像转化为数字信号。 CCD上植入的微小光敏物质称作像素（Pixel）。一块CCD上包含的像素数越多，其提供的画面分辨率也就越高。CCD的作用就像胶片一样，但它是把光信号转换成电荷信号。CCD上有许多排列整齐的光电二极">
-<meta name="keywords" content="计算机视觉">
+<meta name="description" content="python中的那些全局变量global的使用如下代码，print(x)，会输出几呢？ 答案是1。我们可能会说，python不是弱类型语言吗，我在前面定义了x，在函数内修改了为啥不可见呢？  然而恰恰是因为python是弱类型，fun内的x肯定是函数内部的新变量，而不是外部的变量x。 因此，如果我们想要拿到函数内部修改的值，要么用返回值，要么用global修饰（标识全局变量）。 我们可能会疑惑，p">
+<meta name="keywords" content="python基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机视觉中的相机标定">
-<meta property="og:url" content="https://hplegend.github.io/2019/11/20/计算机视觉中的相机标定/index.html">
+<meta property="og:title" content="Python global">
+<meta property="og:url" content="https://hplegend.github.io/2020/12/02/Python-global/index.html">
 <meta property="og:site_name" content="Hplegend&#39;s blog">
-<meta property="og:description" content="CCD 简介：   CCD，英文全称：Charge-coupled Device，中文全称：电荷耦合元件。可以称为CCD图像传感器,也叫图像控制器。CCD是一种半导体器件，能够把光学影像转化为数字信号。 CCD上植入的微小光敏物质称作像素（Pixel）。一块CCD上包含的像素数越多，其提供的画面分辨率也就越高。CCD的作用就像胶片一样，但它是把光信号转换成电荷信号。CCD上有许多排列整齐的光电二极">
+<meta property="og:description" content="python中的那些全局变量global的使用如下代码，print(x)，会输出几呢？ 答案是1。我们可能会说，python不是弱类型语言吗，我在前面定义了x，在函数内修改了为啥不可见呢？  然而恰恰是因为python是弱类型，fun内的x肯定是函数内部的新变量，而不是外部的变量x。 因此，如果我们想要拿到函数内部修改的值，要么用返回值，要么用global修饰（标识全局变量）。 我们可能会疑惑，p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T13:56:58.756Z">
+<meta property="og:updated_time" content="2020-12-02T12:13:58.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机视觉中的相机标定">
-<meta name="twitter:description" content="CCD 简介：   CCD，英文全称：Charge-coupled Device，中文全称：电荷耦合元件。可以称为CCD图像传感器,也叫图像控制器。CCD是一种半导体器件，能够把光学影像转化为数字信号。 CCD上植入的微小光敏物质称作像素（Pixel）。一块CCD上包含的像素数越多，其提供的画面分辨率也就越高。CCD的作用就像胶片一样，但它是把光信号转换成电荷信号。CCD上有许多排列整齐的光电二极">
+<meta name="twitter:title" content="Python global">
+<meta name="twitter:description" content="python中的那些全局变量global的使用如下代码，print(x)，会输出几呢？ 答案是1。我们可能会说，python不是弱类型语言吗，我在前面定义了x，在函数内修改了为啥不可见呢？  然而恰恰是因为python是弱类型，fun内的x肯定是函数内部的新变量，而不是外部的变量x。 因此，如果我们想要拿到函数内部修改的值，要么用返回值，要么用global修饰（标识全局变量）。 我们可能会疑惑，p">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://hplegend.github.io/2019/11/20/计算机视觉中的相机标定/">
+  <link rel="canonical" href="https://hplegend.github.io/2020/12/02/Python-global/">
 
 
 
 
 
-  <title>计算机视觉中的相机标定 | Hplegend's blog</title>
+  <title>Python global | Hplegend's blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2019/11/20/计算机视觉中的相机标定/">
+    <link itemprop="mainEntityOfPage" href="https://hplegend.github.io/2020/12/02/Python-global/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hplegend">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算机视觉中的相机标定</h1>
+          <h1 class="post-title" itemprop="name headline">Python global</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T12:28:30+08:00">
-                2019-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-02T19:48:57+08:00">
+                2020-12-02
               </time>
             
 
@@ -293,6 +293,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -301,8 +323,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/20/计算机视觉中的相机标定/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/11/20/计算机视觉中的相机标定/" itemprop="commentsCount"></span>
+                <a href="/2020/12/02/Python-global/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/12/02/Python-global/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,10 +352,14 @@
       
 
       
-        <p>CCD 简介：</p>
-<p><cite></cite></p>
-<p> <a href="https://baike.baidu.com/item/CCD" target="_blank" rel="noopener">CCD</a>，英文全称：Charge-coupled Device，中文全称：<a href="https://baike.baidu.com/item/电荷" target="_blank" rel="noopener">电荷</a>耦合元件。可以称为CCD<a href="https://baike.baidu.com/item/图像" target="_blank" rel="noopener">图像</a><a href="https://baike.baidu.com/item/传感器" target="_blank" rel="noopener">传感器</a>,也叫图像控制器。CCD是一种<a href="https://baike.baidu.com/item/半导体器件/1390615" target="_blank" rel="noopener">半导体器件</a>，能够把<a href="https://baike.baidu.com/item/光学/81785" target="_blank" rel="noopener">光学</a>影像转化为<a href="https://baike.baidu.com/item/数字信号/915663" target="_blank" rel="noopener">数字信号</a>。 <a href="https://baike.baidu.com/item/CCD" target="_blank" rel="noopener">CCD</a>上植入的微小光敏物质称作<a href="https://baike.baidu.com/item/像素" target="_blank" rel="noopener">像素</a>（Pixel）。一块CCD上包含的像素数越多，其提供的<a href="https://baike.baidu.com/item/画面/3476888" target="_blank" rel="noopener">画面</a>分辨率也就越高。CCD的作用就像胶片一样，但它是把光信号转换成电荷信号。CCD上有许多排列整齐的光电二极管，能感应光线，并将光信号转变成电信号，经外部采样放大及模数转换电路转换成数字图像信号。此外，CCD还是蜂群崩溃混乱症的简称。 </p>
-<p></p>
+        <h2 id="python中的那些全局变量"><a href="#python中的那些全局变量" class="headerlink" title="python中的那些全局变量"></a>python中的那些全局变量</h2><h3 id="global的使用"><a href="#global的使用" class="headerlink" title="global的使用"></a>global的使用</h3><p>如下代码，print(x)，会输出几呢？ 答案是1。我们可能会说，python不是弱类型语言吗，我在前面定义了x，在函数内修改了为啥不可见呢？  然而恰恰是因为python是弱类型，fun内的x肯定是函数内部的新变量，而不是外部的变量x。 因此，如果我们想要拿到函数内部修改的值，要么用返回值，要么用global修饰（标识全局变量）。 我们可能会疑惑，python不是基于地址传递的吗，为啥不能通过参数传递来获取内部值得变更呢？  这里与java类似，虽然是基于地址或者引用传递，但是传递的是地址，你重新赋值后，变量已经不指向原来的内存空间了，因此修改对于外部而言是不可见的。这里可能比较拗口，实际上要表达的意思就是：基于地址传递，实际上是基于<strong>共享内存</strong>，如果重新赋值后，并通过新赋值的句柄操作，那么实际上是操作了另外的共享内存，而非参数传递的共享内存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line">	x = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">fun()</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\Users\hp.he\Anaconda3\envs\grapCut\python.exe C:/Users/hp.he/PycharmProjects/GrapCut/test.py</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<h3 id="多文件共享变量"><a href="#多文件共享变量" class="headerlink" title="多文件共享变量"></a>多文件共享变量</h3><p>如下两个文件：testa.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># testa.py</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> x</span><br><span class="line">	x = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># testb.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br><span class="line"></span><br><span class="line">print(test.x)</span><br></pre></td></tr></table></figure>
+<p>那么运行testb.py，输出的结果是多少？ 输出“2”， 为啥是2，而不是1呢？ 在倒入库的时候，你可以理解未python解释器已经执行了一遍代码，因为testa.py中用fun()调用，因此执行了一遍函数，又因为是global修饰，so，就变成了2。</p>
+<p>其实多文件共享变量，类比与java中的类变量，视乎有状态，视乎又没有状态。</p>
 
       
     </div>
@@ -351,7 +377,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计算机视觉/" rel="tag"># 计算机视觉</a>
+            <a href="/tags/python基础/" rel="tag"># python基础</a>
           
         </div>
       
@@ -364,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/18/http-中的get方法知多少/" rel="next" title="http 中的get方法知多少">
-                <i class="fa fa-chevron-left"></i> http 中的get方法知多少
+              <a href="/2020/04/06/匿名类/" rel="next" title="匿名类">
+                <i class="fa fa-chevron-left"></i> 匿名类
               </a>
             
           </div>
@@ -373,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/03/HttpRequstWrapper-tricks/" rel="prev" title="HttpRequstWrapper tricks">
-                HttpRequstWrapper tricks <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -435,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +529,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python中的那些全局变量"><span class="nav-number">1.</span> <span class="nav-text">python中的那些全局变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global的使用"><span class="nav-number">1.1.</span> <span class="nav-text">global的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多文件共享变量"><span class="nav-number">1.2.</span> <span class="nav-text">多文件共享变量</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

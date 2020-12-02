@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Python global</title>
+      <link href="/2020/12/02/Python-global/"/>
+      <url>/2020/12/02/Python-global/</url>
+      
+        <content type="html"><![CDATA[<h2 id="python中的那些全局变量"><a href="#python中的那些全局变量" class="headerlink" title="python中的那些全局变量"></a>python中的那些全局变量</h2><h3 id="global的使用"><a href="#global的使用" class="headerlink" title="global的使用"></a>global的使用</h3><p>如下代码，print(x)，会输出几呢？ 答案是1。我们可能会说，python不是弱类型语言吗，我在前面定义了x，在函数内修改了为啥不可见呢？  然而恰恰是因为python是弱类型，fun内的x肯定是函数内部的新变量，而不是外部的变量x。 因此，如果我们想要拿到函数内部修改的值，要么用返回值，要么用global修饰（标识全局变量）。 我们可能会疑惑，python不是基于地址传递的吗，为啥不能通过参数传递来获取内部值得变更呢？  这里与java类似，虽然是基于地址或者引用传递，但是传递的是地址，你重新赋值后，变量已经不指向原来的内存空间了，因此修改对于外部而言是不可见的。这里可能比较拗口，实际上要表达的意思就是：基于地址传递，实际上是基于<strong>共享内存</strong>，如果重新赋值后，并通过新赋值的句柄操作，那么实际上是操作了另外的共享内存，而非参数传递的共享内存</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line">x = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">fun()</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\Users\hp.he\Anaconda3\envs\grapCut\python.exe C:/Users/hp.he/PycharmProjects/GrapCut/test.py</span><br><span class="line">1</span><br></pre></td></tr></table></figure><h3 id="多文件共享变量"><a href="#多文件共享变量" class="headerlink" title="多文件共享变量"></a>多文件共享变量</h3><p>如下两个文件：testa.py</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># testa.py</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line"><span class="keyword">global</span> x</span><br><span class="line">x = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun()</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># testb.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br><span class="line"></span><br><span class="line">print(test.x)</span><br></pre></td></tr></table></figure><p>那么运行testb.py，输出的结果是多少？ 输出“2”， 为啥是2，而不是1呢？ 在倒入库的时候，你可以理解未python解释器已经执行了一遍代码，因为testa.py中用fun()调用，因此执行了一遍函数，又因为是global修饰，so，就变成了2。</p><p>其实多文件共享变量，类比与java中的类变量，视乎有状态，视乎又没有状态。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>匿名类</title>
       <link href="/2020/04/06/%E5%8C%BF%E5%90%8D%E7%B1%BB/"/>
       <url>/2020/04/06/%E5%8C%BF%E5%90%8D%E7%B1%BB/</url>
